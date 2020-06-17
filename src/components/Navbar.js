@@ -5,10 +5,6 @@ import { Link } from 'react-router-dom'
 
 
 const Navbar = () => {
-    const [nav, showNav] = useState(false)
-    useEffect(() => {
-        window.location.href.slice(21) === '/' ? showNav(true) : showNav(false)
-    }, [window.location.href])
 
     return (
         <MyContext.Consumer>

@@ -13,16 +13,16 @@ class MyProvider extends Component{
     }
 
     render(){
-          return(
-            <MyContext.Provider
-            value={
-              this.state.nav
-            }
-            >
-              {this.props.children}
-            </MyContext.Provider>
-          )}
+      return(
+        <MyContext.Provider value={
+          this.state.nav
+        }>
+          {this.props.children}
+        </MyContext.Provider>
+    )}
 
 
-  }
-        export default withRouter(MyProvider)
+}
+
+
+  export default withRouter(MyProvider)
