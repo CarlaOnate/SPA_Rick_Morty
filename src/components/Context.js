@@ -25,4 +25,4 @@ class MyProvider extends Component{
 }
 
 
-  export default withRouter(MyProvider)
+export default withRouter(MyProvider)

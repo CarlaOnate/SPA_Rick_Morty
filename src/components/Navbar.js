@@ -2,17 +2,13 @@ import React, {useState, useEffect} from 'react'
 import { MyContext } from './Context'
 import { Home, Nav, Personajes, Episodios, Registro, List } from '../styled'
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 
-const Navbar = () => {
 
+const Navbar = ({location: {pathname}}) => {
     return (
-        <MyContext.Consumer>
-    {context => {
-        return (
-        <>
-        {context.nav ?
-        (<Nav>
+        pathname === '/' ? (<Nav>
             <List>
             <Home>
                 <Link to='/'>Home</Link>
@@ -44,12 +40,7 @@ const Navbar = () => {
                 </Registro>
              </List>
             </Nav>)
-        }
-        </>
-    )
-    }}
-    </MyContext.Consumer>
     )
 }
 
-export default Navbar
+export default withRouter(Navbar)
