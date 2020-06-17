@@ -1,18 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import {Card} from '../styled'
-import { getChar } from '../servies'
+import { getChar, getCharNum } from '../servies'
 
 const EpisodeCard = ({el}) => {
     const [show, setShow] = useState(false)
     const [state, setState] = useState([])
 
-    // useEffect(() => {
+    // useEffect(() => { Chrome cannot handle large request in short period of time!
     //     el.characters.map((el, ind) => {
-    //         if (ind < 30) {
-    //             getCharNum(el.slice(42)).then(({data: {values}}) => setCharac([...character, values]))
+    //         if (ind < 5) {
+    //             getCharNum(el.slice(42)).then(({data: {values}}) => setState([...state, values]))
     //         }
     //     })
-    // }, [])
+    // }, [state, el.characters])
+
     // useEffect(() => {
     //     getChar().then(({data: {results}}) => {
     //         setState(results)

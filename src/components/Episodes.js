@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {getEpisodes} from '../servies'
-import { Cards} from '../styled'
+import { Cards, EpisodesCards} from '../styled'
 import EpisodeCard from './EpisodeCard'
 
 const Episodes = () => {
@@ -16,12 +16,14 @@ const Episodes = () => {
 
     return (
         <>
-        <h1>Episodes</h1>
+        <h1>EpisodesCards</h1>
+        <EpisodesCards>
         <Cards>
             {state.map(el => (
                         <EpisodeCard key={el.id} el={el}/>
             ))}
         </Cards>
+        </EpisodesCards>
         </>
     )
 }
