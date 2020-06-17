@@ -22,7 +22,6 @@ const EpisodeCard = ({el}) => {
         })
         }, [])
 
-    console.log(state)
     return (
         <Card>
             <p>Name: {el.name}</p>
@@ -30,15 +29,15 @@ const EpisodeCard = ({el}) => {
             {show && (
             <>
                 <p>Episode: {el.episode}</p>
-                <p>Characters: 
+                <div>Characters: 
                 <ul>
                 {state.map((el) => {
                     return (
-                            <li>{el.name}</li>
+                            <li key={el.id}>{el.name}</li>
                     )
                 })}
                 </ul>
-                </p>
+                </div>
                 {el.type && (
                     <p>Type: {el.type}</p>
                 )}
