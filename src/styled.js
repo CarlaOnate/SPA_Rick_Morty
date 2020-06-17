@@ -33,7 +33,7 @@ export const Registro = style.li`
     grid-area: registro;
 `
 
-export const Characters = style.div`
+export const Cards = style.div`
     display: flex;
     width: 90vw;
     flex-flow: row wrap;

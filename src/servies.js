@@ -7,3 +7,5 @@ const service = axios.create({ withCredentials: true, baseURL });
 export const getChar = async () => await service.get('character')
 
 export const getEpisodes = async () => await service.get('episode')
+
+export const getCharNum = async (num) => await service.get(`character/${num}`)
