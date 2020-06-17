@@ -12,7 +12,7 @@ const Episodes = () => {
             console.log(results)
             console.log(state)
         })
-    }, [state])
+    }, [])
 
     return (
         <>

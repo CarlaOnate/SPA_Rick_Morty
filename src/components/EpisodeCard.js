@@ -8,20 +8,21 @@ const EpisodeCard = ({el}) => {
 
     // useEffect(() => { Chrome cannot handle large request in short period of time!
     //     el.characters.map((el, ind) => {
-    //         if (ind < 5) {
+    //         if (ind < 30) {
     //             getCharNum(el.slice(42)).then(({data: {values}}) => setState([...state, values]))
     //         }
     //     })
     // }, [state, el.characters])
 
-    // useEffect(() => {
-    //     getChar().then(({data: {results}}) => {
-    //         setState(results)
-    //         console.log(results)
-    //         console.log(state)
-    //     })
-    // }, [state])
+        useEffect(() => {
+        el.characters.map((el, ind) => {
+            if (ind < 10) {
+                getCharNum(el.slice(42)).then(({data}) => setState((prev) => [...prev, data]))
+            }
+        })
+        }, [])
 
+    console.log(state)
     return (
         <Card>
             <p>Name: {el.name}</p>
@@ -29,13 +30,15 @@ const EpisodeCard = ({el}) => {
             {show && (
             <>
                 <p>Episode: {el.episode}</p>
-                {/* <p>Characters: {el.characters.map((el, index) => {
-                    return index < 30 && (
-                        <ul>
-                            <li></li>
-                        </ul>
+                <p>Characters: 
+                <ul>
+                {state.map((el) => {
+                    return (
+                            <li>{el.name}</li>
                     )
-                })}</p> */}
+                })}
+                </ul>
+                </p>
                 {el.type && (
                     <p>Type: {el.type}</p>
                 )}
