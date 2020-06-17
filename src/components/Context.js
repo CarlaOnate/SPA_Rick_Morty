@@ -1,12 +1,15 @@
 import React, { Component, createContext } from 'react'
 import { withRouter } from 'react-router-dom'
-import {signup, logout, login, signupVet} from './services'
 
 export const MyContext = createContext()
 
 class MyProvider extends Component{
     state = {
         nav: true
+    }
+
+    setNav = () => {
+      this.setState({nav: false})
     }
 
     render(){
@@ -20,4 +23,6 @@ class MyProvider extends Component{
             </MyContext.Provider>
           )}
 
-}
+
+  }
+        export default withRouter(MyProvider)

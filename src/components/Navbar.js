@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { MyContext } from './Context'
 import { Home, Nav, Personajes, Episodios, Registro, List } from '../styled'
 import { Link } from 'react-router-dom'
 
@@ -10,8 +11,11 @@ const Navbar = () => {
     }, [window.location.href])
 
     return (
+        <MyContext.Consumer>
+    {context => {
+        return (
         <>
-        {nav ?
+        {context ?
         (<Nav>
             <List>
             <Home>
@@ -46,6 +50,9 @@ const Navbar = () => {
             </Nav>)
         }
         </>
+    )
+    }}
+    </MyContext.Consumer>
     )
 }
 
