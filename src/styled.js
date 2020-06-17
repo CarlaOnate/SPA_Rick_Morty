@@ -1,7 +1,7 @@
 import style from 'styled-components'
 
 export const Nav = style.nav`
-    background: none;
+    background: transparent;
 `
 
 export const List = style.nav`
