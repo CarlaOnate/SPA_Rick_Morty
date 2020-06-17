@@ -11,7 +11,7 @@ const Navbar = () => {
     {context => {
         return (
         <>
-        {context ?
+        {context.nav ?
         (<Nav>
             <List>
             <Home>
