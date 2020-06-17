@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {getChar} from '../servies'
-import {Cards} from '../styled'
+import {Cards, CharCards} from '../styled'
 import CharCard from './CharCard'
 
 const Personajes = () => {
@@ -16,12 +16,14 @@ const Personajes = () => {
 
     return (
         <>
-            <h1>Personajes</h1>
+        <h1>Personajes</h1>
+        <CharCards>
             <Cards>
                 {state.map(el => (
                     <CharCard key={el.id} el={el}/>
                 ))}
             </Cards>
+        </CharCards>
         </>
     )
 }

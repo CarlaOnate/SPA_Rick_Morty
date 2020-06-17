@@ -9,8 +9,6 @@ const Episodes = () => {
     useEffect(() => {
         getEpisodes().then(({data: {results}}) => {
             setState(results)
-            console.log(results)
-            console.log(state)
         })
     }, [])
 

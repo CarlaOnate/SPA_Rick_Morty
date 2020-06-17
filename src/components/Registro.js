@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { RegistroForm, FormInputs } from '../styled'
 
 const Registro = () => {
     const [state, setState] = useState({name: '', email: '', password: ''})
@@ -20,15 +21,19 @@ const Registro = () => {
 
     return (
         <>
-            <form onSubmit={(e) => submit(e)}>
-                <label>Name</label>
-                <input name='name' onChange={e => handleInputs(e)} placeholder='name'/>
-                <label>Email</label>
-                <input name='email' onChange={e => handleInputs(e)} placeholder='email'/>
-                <label>Password</label>
-                <input name='password' onChange={e => handleInputs(e)} placeholder='password'/>
-                <button type='submit'>Send</button>
-            </form>
+            <RegistroForm onSubmit={(e) => submit(e)}>
+                <FormInputs style={{gridArea: 'form'}}>
+                    <label>Name</label>
+                    <input name='name' onChange={e => handleInputs(e)} placeholder='name'/>
+                    <label>Email</label>
+                    <input name='email' onChange={e => handleInputs(e)} placeholder='email'/>
+                    <label>Password</label>
+                    <input name='password' onChange={e => handleInputs(e)} placeholder='password'/>
+                </FormInputs>
+                <div style={{gridArea: 'button', placeSelf: 'center'}}>
+                    <button type='submit'>Send</button>
+                </div>
+            </RegistroForm>
             {registered && (
                 <p>Registro realizado con éxito {state.name}</p>
             )}

@@ -54,6 +54,13 @@ export const EpisodesCards = style.div`
     grid-template-areas: '. cards .'
 `
 
+export const CharCards = style.div`
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: '. cards .'
+`
+
 export const Cards = style.div`
     grid-area: cards;
     display: flex;
@@ -70,4 +77,21 @@ export const Card = style.div`
     padding: 10px;
     flex-direction: column;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+`
+
+export const RegistroForm = style.form`
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 100px 200px 50px;
+    grid-template-areas: '. . .'
+                         '. form .'
+                         '. button .'
+`
+
+export const FormInputs = style.div`
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 `
