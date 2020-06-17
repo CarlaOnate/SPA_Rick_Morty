@@ -18,7 +18,7 @@ const CharCard = ({el}) => {
                 )}
             </>
             )}
-            <button onClick={() => setShow(!show)}>{show ? ('Less info') : ('More info')}</button>
+            <button style={{margin: '10px'}} onClick={() => setShow(!show)}>{show ? ('Less info') : ('More info')}</button>
         </Card>
     )
 }

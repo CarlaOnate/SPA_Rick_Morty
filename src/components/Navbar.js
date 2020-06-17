@@ -23,21 +23,21 @@ const Navbar = ({location: {pathname}}) => {
             </Registro>
          </List>
         </Nav>) :
-            (<Nav style={{background: 'black', color: 'white'}}>
+            (<Nav style={{background: 'gray'}}>
                 <List>
-                <Home>
-                    <Link to='/'>Home</Link>
-                </Home>
-                <Personajes>
-                    <Link to='/personajes'>Personajes</Link>
-                </Personajes>
-                <Episodios>
-                <Link to='/episodios'>Episodios</Link>
-                </Episodios>
-                <Registro>
-                <Link to='/registro'>Registro</Link>
-                </Registro>
-             </List>
+                    <Home className={pathname === '/' && ('active')}>
+                        <Link style={{textDecoration: 'none', color: 'white'}} to='/'>Home</Link>
+                    </Home>
+                    <Personajes className={pathname === '/personajes' && ('active')}>
+                        <Link style={{textDecoration: 'none', color: 'white'}} to='/personajes'>Personajes</Link>
+                    </Personajes>
+                    <Episodios className={pathname === '/episodes' && ('active')}>
+                    <Link style={{textDecoration: 'none', color: 'white'}} to='/episodios'>Episodios</Link>
+                    </Episodios>
+                    <Registro className={pathname === '/registro' && ('active')}>
+                    <Link style={{textDecoration: 'none', color: 'white'}} to='/registro'>Registro</Link>
+                    </Registro>
+                </List>
             </Nav>)
     )
 }

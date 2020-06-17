@@ -5,6 +5,9 @@ export const Nav = style.nav`
 `
 
 export const List = style.nav`
+    .active{
+        color: red;
+    }
     list-style: none;
     justify-items: center;
     display: grid;
