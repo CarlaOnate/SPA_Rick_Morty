@@ -43,6 +43,10 @@ export const Registro = style.li`
 
 `
 
+export const CharDiv = style.div`
+    overflow-y: scroll;
+`
+
 export const EpisodesCards = style.div`
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
@@ -62,6 +66,7 @@ export const Cards = style.div`
 export const Card = style.div`
     display: flex;
     width: 30%;
+    max-height: 300px;
     padding: 10px;
     flex-direction: column;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);

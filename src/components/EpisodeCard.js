@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Card} from '../styled'
+import {Card, CharDiv} from '../styled'
 import { getChar, getCharNum } from '../servies'
 
 const EpisodeCard = ({el}) => {
@@ -16,7 +16,7 @@ const EpisodeCard = ({el}) => {
 
         useEffect(() => {
         el.characters.map((el, ind) => {
-            if (ind < 10) {
+            if (ind < 20) {
                 getCharNum(el.slice(42)).then(({data}) => setState((prev) => [...prev, data]))
             }
         })
@@ -29,7 +29,8 @@ const EpisodeCard = ({el}) => {
             {show && (
             <>
                 <p>Episode: {el.episode}</p>
-                <div>Characters: 
+                <CharDiv>
+                Characters:
                 <ul>
                 {state.map((el) => {
                     return (
@@ -37,13 +38,13 @@ const EpisodeCard = ({el}) => {
                     )
                 })}
                 </ul>
-                </div>
+                </CharDiv>
                 {el.type && (
                     <p>Type: {el.type}</p>
                 )}
             </>
             )}
-            <button onClick={() => setShow(!show)}>{show ? ('Less info') : ('More info')}</button>
+            <button style={{margin: '10px'}}  onClick={() => setShow(!show)}>{show ? ('Less info') : ('More info')}</button>
         </Card>
     )
 }
